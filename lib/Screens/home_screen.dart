@@ -61,6 +61,245 @@ class _home_ScreenState extends State<home_Screen> {
                                           borderRadius:
                                               BorderRadius.circular(40))),
                                 ),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            Icons.location_on_sharp,
+                                            color: Colors.black,
+                                          ),
+                                          Text(
+                                            "${apimodel?.location['name']}, ${apimodel?.location['country']}",
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 22),
+                                          ),
+                                          Spacer(),
+                                          IconButton(
+                                            onPressed: () {},
+                                            icon: Icon(
+                                              Icons.bedtime_sharp,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 15),
+                                        child: Text(
+                                          "Today, ${apimodel?.forecast['forecastday'][0]['date']}",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 18),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 130,
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(15),
+                                        child: Text(
+                                          "${apimodel?.current['temp_c']}℃",
+                                          style: TextStyle(
+                                            fontSize: 30,
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                0.25,
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        margin: EdgeInsets.all(15),
+                                        decoration: BoxDecoration(
+                                          color: Colors.black.withOpacity(0.5),
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                        ),
+                                        child: Row(
+                                          children: [
+                                            Container(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.2,
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.18,
+                                              margin: EdgeInsets.all(8),
+                                              decoration: BoxDecoration(
+                                                // color: Colors.red,
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                              ),
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Text(
+                                                    "Feelslike",
+                                                    style:
+                                                        TextStyle(fontSize: 14),
+                                                  ),
+                                                  Text("℃",
+                                                      style: TextStyle(
+                                                          fontSize: 20)),
+                                                  Text(
+                                                      "${apimodel?.current['feelslike_c']}",
+                                                      style: TextStyle(
+                                                          fontSize: 18)),
+                                                ],
+                                              ),
+                                            ),
+                                            Container(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.2,
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.18,
+                                              margin: EdgeInsets.all(8),
+                                              decoration: BoxDecoration(
+                                                // color: Colors.red,
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                              ),
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Text(
+                                                    "Wind",
+                                                    style:
+                                                        TextStyle(fontSize: 14),
+                                                  ),
+                                                  Icon(Icons.air),
+                                                  Text(
+                                                      "${apimodel?.current['wind_kph']}",
+                                                      style: TextStyle(
+                                                          fontSize: 18)),
+                                                ],
+                                              ),
+                                            ),
+                                            Container(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.2,
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.18,
+                                              margin: EdgeInsets.all(8),
+                                              decoration: BoxDecoration(
+                                                // color: Colors.red,
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                              ),
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Text(
+                                                    "Cloud",
+                                                    style:
+                                                        TextStyle(fontSize: 14),
+                                                  ),
+                                                  Icon(Icons.cloud),
+                                                  Text(
+                                                      "${apimodel?.current['cloud']}",
+                                                      style: TextStyle(
+                                                          fontSize: 18)),
+                                                ],
+                                              ),
+                                            ),
+                                            Container(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.2,
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.18,
+                                              margin: EdgeInsets.all(8),
+                                              decoration: BoxDecoration(
+                                                // color: Colors.red,
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                              ),
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Text(
+                                                    "Humidity",
+                                                    style:
+                                                        TextStyle(fontSize: 14),
+                                                  ),
+                                                  Icon(Icons.water_drop),
+                                                  Text(
+                                                      "${apimodel?.current['humidity']}",
+                                                      style: TextStyle(
+                                                          fontSize: 18)),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: ListView.builder(
+                                          itemCount: 24,
+                                          scrollDirection: Axis.horizontal,
+                                          itemBuilder: (context, index) =>
+                                              Container(
+                                            height: 100,
+                                            width: 100,
+                                            margin: EdgeInsets.all(10),
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  Colors.black.withOpacity(0.5),
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                            ),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children: [
+                                                Text(
+                                                  "${index}:00",
+                                                  style:
+                                                      TextStyle(fontSize: 14),
+                                                ),
+                                                Image.network(
+                                                    "http:${apimodel?.forecast['forecastday'][0]['hour'][index]['condition']['icon']}"),
+                                                Text(
+                                                    "${apimodel?.forecast['forecastday'][0]['hour'][index]['temp_c']}℃",
+                                                    style: TextStyle(
+                                                        fontSize: 18)),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                )
                               ],
                             ),
                           ],
