@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:wather_app/Screens/home_screen.dart';
+import 'package:wather_app/Screens/splash.dart';
 
 import 'Screens/home.dart';
 
@@ -9,7 +11,10 @@ void main() {
       darkTheme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true),
-      home: home(),
+      routes: {
+        '/': (ctx) => Splash(),
+        'home': (ctx) => home_Screen(),
+      },
     ),
   );
 }
