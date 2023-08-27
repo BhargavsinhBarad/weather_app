@@ -13,7 +13,7 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     Timer(
-      Duration(seconds: 4),
+      Duration(seconds: 8),
       () {
         Navigator.pushReplacementNamed(context, 'home');
       },
@@ -22,8 +22,8 @@ class _SplashState extends State<Splash> {
       backgroundColor: Colors.black,
       body: Center(
         child: Container(
-          height: double.infinity,
-          width: double.infinity,
+          height: 350,
+          width: 350,
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: NetworkImage(

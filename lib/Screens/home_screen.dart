@@ -1,8 +1,11 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
-import 'package:wather_app/Utils/api.dart';
+import 'package:provider/provider.dart';
+import 'package:wather_app/Model/Utils/api.dart';
 
-import '../Utils/api_model.dart';
+import '../Model/Utils/api_model.dart';
+import '../Provider/platefrom.dart';
+import '../Provider/theme_provider.dart';
 
 class home_Screen extends StatefulWidget {
   const home_Screen({super.key});
@@ -39,8 +42,15 @@ class _home_ScreenState extends State<home_Screen> {
                               width: MediaQuery.of(context).size.width,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
-                                      image: NetworkImage(
-                                          "https://w0.peakpx.com/wallpaper/20/650/HD-wallpaper-sky-clouds-dusk-nature-partly-cloudy.jpg"),
+                                      image: NetworkImage((Provider.of<
+                                                          themeprovider>(
+                                                      context,
+                                                      listen: true)
+                                                  .theme
+                                                  .isdark ==
+                                              true)
+                                          ? "https://i.pinimg.com/736x/7f/63/1e/7f631e577ed5e5ffbbce726f8ec03489.jpg"
+                                          : "https://w0.peakpx.com/wallpaper/654/512/HD-wallpaper-moon-clouds-full-moon-nature-sky-weather.jpg"),
                                       fit: BoxFit.cover)),
                             ),
                             Column(
@@ -80,12 +90,28 @@ class _home_ScreenState extends State<home_Screen> {
                                           ),
                                           Spacer(),
                                           IconButton(
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              Provider.of<themeprovider>(
+                                                      context,
+                                                      listen: false)
+                                                  .changetheme();
+                                            },
                                             icon: Icon(
                                               Icons.bedtime_sharp,
                                               color: Colors.black,
                                             ),
                                           ),
+                                          Switch(
+                                              activeColor: Colors.black,
+                                              value: Provider.of<platfrom>(
+                                                      context,
+                                                      listen: false)
+                                                  .isios,
+                                              onChanged: (val) {
+                                                Provider.of<platfrom>(context,
+                                                        listen: false)
+                                                    .changeolatfrom(val);
+                                              }),
                                         ],
                                       ),
                                       Padding(
@@ -106,7 +132,7 @@ class _home_ScreenState extends State<home_Screen> {
                                         child: Text(
                                           "${apimodel?.current['temp_c']}℃",
                                           style: TextStyle(
-                                            fontSize: 30,
+                                            fontSize: 35,
                                             color: Colors.black,
                                           ),
                                         ),
@@ -124,140 +150,74 @@ class _home_ScreenState extends State<home_Screen> {
                                               BorderRadius.circular(20),
                                         ),
                                         child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
                                           children: [
-                                            Container(
-                                              height: MediaQuery.of(context)
-                                                      .size
-                                                      .height *
-                                                  0.2,
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.18,
-                                              margin: EdgeInsets.all(8),
-                                              decoration: BoxDecoration(
-                                                // color: Colors.red,
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                              ),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceEvenly,
-                                                children: [
-                                                  Text(
-                                                    "Feelslike",
-                                                    style:
-                                                        TextStyle(fontSize: 14),
-                                                  ),
-                                                  Text("℃",
-                                                      style: TextStyle(
-                                                          fontSize: 20)),
-                                                  Text(
-                                                      "${apimodel?.current['feelslike_c']}",
-                                                      style: TextStyle(
-                                                          fontSize: 18)),
-                                                ],
-                                              ),
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children: [
+                                                Text(
+                                                  "Feelslike",
+                                                  style:
+                                                      TextStyle(fontSize: 14),
+                                                ),
+                                                Text("℃",
+                                                    style: TextStyle(
+                                                        fontSize: 20)),
+                                                Text(
+                                                    "${apimodel?.current['feelslike_c']}",
+                                                    style: TextStyle(
+                                                        fontSize: 18)),
+                                              ],
                                             ),
-                                            Container(
-                                              height: MediaQuery.of(context)
-                                                      .size
-                                                      .height *
-                                                  0.2,
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.18,
-                                              margin: EdgeInsets.all(8),
-                                              decoration: BoxDecoration(
-                                                // color: Colors.red,
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                              ),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceEvenly,
-                                                children: [
-                                                  Text(
-                                                    "Wind",
-                                                    style:
-                                                        TextStyle(fontSize: 14),
-                                                  ),
-                                                  Icon(Icons.air),
-                                                  Text(
-                                                      "${apimodel?.current['wind_kph']}",
-                                                      style: TextStyle(
-                                                          fontSize: 18)),
-                                                ],
-                                              ),
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children: [
+                                                Text(
+                                                  "Wind",
+                                                  style:
+                                                      TextStyle(fontSize: 14),
+                                                ),
+                                                Icon(Icons.air),
+                                                Text(
+                                                    "${apimodel?.current['wind_kph']}",
+                                                    style: TextStyle(
+                                                        fontSize: 18)),
+                                              ],
                                             ),
-                                            Container(
-                                              height: MediaQuery.of(context)
-                                                      .size
-                                                      .height *
-                                                  0.2,
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.18,
-                                              margin: EdgeInsets.all(8),
-                                              decoration: BoxDecoration(
-                                                // color: Colors.red,
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                              ),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceEvenly,
-                                                children: [
-                                                  Text(
-                                                    "Cloud",
-                                                    style:
-                                                        TextStyle(fontSize: 14),
-                                                  ),
-                                                  Icon(Icons.cloud),
-                                                  Text(
-                                                      "${apimodel?.current['cloud']}",
-                                                      style: TextStyle(
-                                                          fontSize: 18)),
-                                                ],
-                                              ),
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children: [
+                                                Text(
+                                                  "Cloud",
+                                                  style:
+                                                      TextStyle(fontSize: 14),
+                                                ),
+                                                Icon(Icons.cloud),
+                                                Text(
+                                                    "${apimodel?.current['cloud']}",
+                                                    style: TextStyle(
+                                                        fontSize: 18)),
+                                              ],
                                             ),
-                                            Container(
-                                              height: MediaQuery.of(context)
-                                                      .size
-                                                      .height *
-                                                  0.2,
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.18,
-                                              margin: EdgeInsets.all(8),
-                                              decoration: BoxDecoration(
-                                                // color: Colors.red,
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                              ),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceEvenly,
-                                                children: [
-                                                  Text(
-                                                    "Humidity",
-                                                    style:
-                                                        TextStyle(fontSize: 14),
-                                                  ),
-                                                  Icon(Icons.water_drop),
-                                                  Text(
-                                                      "${apimodel?.current['humidity']}",
-                                                      style: TextStyle(
-                                                          fontSize: 18)),
-                                                ],
-                                              ),
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children: [
+                                                Text(
+                                                  "Humidity",
+                                                  style:
+                                                      TextStyle(fontSize: 14),
+                                                ),
+                                                Icon(Icons.water_drop),
+                                                Text(
+                                                    "${apimodel?.current['humidity']}",
+                                                    style: TextStyle(
+                                                        fontSize: 18)),
+                                              ],
                                             ),
                                           ],
                                         ),
@@ -270,7 +230,7 @@ class _home_ScreenState extends State<home_Screen> {
                                               Container(
                                             height: 100,
                                             width: 100,
-                                            margin: EdgeInsets.all(10),
+                                            margin: EdgeInsets.all(8),
                                             decoration: BoxDecoration(
                                               color:
                                                   Colors.black.withOpacity(0.5),
@@ -307,11 +267,11 @@ class _home_ScreenState extends State<home_Screen> {
                       }
                       return Center(
                         child: Container(
-                          height: 150,
-                          width: 150,
+                          height: double.infinity,
+                          width: double.infinity,
                           child: Center(
                             child: Image.network(
-                                "https://cdn.dribbble.com/users/2973561/screenshots/5757826/loading__.gif"),
+                                "https://cdn.dribbble.com/users/205136/screenshots/2582152/ae-fun.gif"),
                           ),
                         ),
                       );
@@ -324,8 +284,7 @@ class _home_ScreenState extends State<home_Screen> {
                     width: 400,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage(
-                                "lib/Assets/page-not-response-5631129-4699348.gif"),
+                            image: AssetImage("lib/Assets/1.gif"),
                             fit: BoxFit.cover)),
                   ),
                 ),

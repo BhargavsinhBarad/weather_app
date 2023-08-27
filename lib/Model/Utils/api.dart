@@ -1,7 +1,8 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:wather_app/Utils/api_model.dart';
+
+import 'api_model.dart';
 
 class api_helper {
   api_helper._();
