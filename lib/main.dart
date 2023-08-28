@@ -11,8 +11,9 @@ import 'Provider/theme_provider.dart';
 import 'Screens/intro_screen.dart';
 
 void main() async {
-  // SharedPreferences preferences = await SharedPreferences.getInstance();
-  // bool isvisited = preferences.getBool("isIntroVisited") ?? false;
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences preferences = await SharedPreferences.getInstance();
+  bool isvisited = preferences.getBool("isIntroVisited") ?? false;
   runApp(MultiProvider(
     providers: [
       ListenableProvider<platfrom>(
@@ -23,8 +24,8 @@ void main() async {
     builder: (context, _) =>
         (Provider.of<platfrom>(context, listen: true).isios == false)
             ? MaterialApp(
-                theme: ThemeData.light(),
-                darkTheme: ThemeData.dark(),
+                theme: ThemeData.light(useMaterial3: true),
+                darkTheme: ThemeData.dark(useMaterial3: true),
                 themeMode: (Provider.of<themeprovider>(context, listen: true)
                             .theme
                             .isdark ==
@@ -32,7 +33,7 @@ void main() async {
                     ? ThemeMode.light
                     : ThemeMode.dark,
                 debugShowCheckedModeBanner: false,
-                // initialRoute: (isvisited == false) ? 'Splash' : '/',
+                initialRoute: (isvisited) ? 'Splash' : '/',
                 routes: {
                   '/': (context) => intro_page(),
                   'Splash': (context) => Splash(),

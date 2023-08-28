@@ -22,12 +22,11 @@ class _SplashState extends State<Splash> {
       backgroundColor: Colors.black,
       body: Center(
         child: Container(
-          height: 350,
-          width: 350,
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: NetworkImage(
-                  "https://i.pinimg.com/originals/0e/f3/bb/0ef3bb66d9216fffcea9022628f7bb26.gif"),
+              image: AssetImage("lib/Assets/2.gif"),
               fit: BoxFit.cover,
             ),
           ),
