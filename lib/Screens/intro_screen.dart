@@ -32,6 +32,22 @@ class _intro_pageState extends State<intro_page> {
               ),
             ),
           ),
+          PageViewModel(
+            title: "Discover the Weather in Your City",
+            body:
+                "Get to know your weather maps and radar precipitation forecast",
+            image: Center(
+              child: Container(
+                height: double.infinity,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: NetworkImage(
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0K-i85yGe1Z7ENYOxAcFp2dkhW8oBk-BsEdFQ3xRRp8ZrYKzQm1hFt3qPSbUMXJ6sxr8&usqp=CAU"),
+                        fit: BoxFit.cover)),
+              ),
+            ),
+          ),
         ],
         done: Text("done"),
         onDone: () async {

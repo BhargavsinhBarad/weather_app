@@ -1,6 +1,7 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:searchbar_animation/searchbar_animation.dart';
 import 'package:wather_app/Model/Utils/api.dart';
 
 import '../Model/Utils/api_model.dart';
@@ -16,6 +17,8 @@ class home_Screen extends StatefulWidget {
 
 class _home_ScreenState extends State<home_Screen> {
   String titl = "Surat";
+
+  TextEditingController textEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -59,17 +62,28 @@ class _home_ScreenState extends State<home_Screen> {
                                   height:
                                       MediaQuery.of(context).size.height * 0.05,
                                 ),
-                                TextFormField(
-                                  onFieldSubmitted: (val) {
+                                SearchBarAnimation(
+                                  searchBoxColour: Colors.black,
+                                  buttonColour: Colors.black,
+                                  buttonWidget: Icon(
+                                    Icons.search_rounded,
+                                    color: Colors.white,
+                                  ),
+                                  secondaryButtonWidget: Icon(
+                                    Icons.arrow_back_ios,
+                                    color: Colors.white,
+                                  ),
+                                  textEditingController: textEditingController,
+                                  isOriginalAnimation: true,
+                                  trailingWidget: Icon(
+                                    Icons.search,
+                                    color: Colors.white,
+                                  ),
+                                  onFieldSubmitted: (String value) {
                                     setState(() {
-                                      titl = val;
+                                      titl = value;
                                     });
                                   },
-                                  decoration: InputDecoration(
-                                      hintText: "Search Here..",
-                                      border: OutlineInputBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(40))),
                                 ),
                                 Expanded(
                                   child: Column(
@@ -80,12 +94,12 @@ class _home_ScreenState extends State<home_Screen> {
                                         children: [
                                           Icon(
                                             Icons.location_on_sharp,
-                                            color: Colors.black,
+                                            color: Colors.white,
                                           ),
                                           Text(
                                             "${apimodel?.location['name']}, ${apimodel?.location['country']}",
                                             style: TextStyle(
-                                                color: Colors.black,
+                                                color: Colors.white,
                                                 fontSize: 22),
                                           ),
                                           Spacer(),
@@ -98,11 +112,12 @@ class _home_ScreenState extends State<home_Screen> {
                                             },
                                             icon: Icon(
                                               Icons.bedtime_sharp,
-                                              color: Colors.black,
+                                              color: Colors.white,
                                             ),
                                           ),
                                           Switch(
-                                              activeColor: Colors.black,
+                                              // activeColor: Colors.black,
+                                              inactiveTrackColor: Colors.black,
                                               value: Provider.of<platfrom>(
                                                       context,
                                                       listen: false)
@@ -120,7 +135,7 @@ class _home_ScreenState extends State<home_Screen> {
                                         child: Text(
                                           "Today, ${apimodel?.forecast['forecastday'][0]['date']}",
                                           style: TextStyle(
-                                              color: Colors.black,
+                                              color: Colors.white,
                                               fontSize: 18),
                                         ),
                                       ),
@@ -133,7 +148,7 @@ class _home_ScreenState extends State<home_Screen> {
                                           "${apimodel?.current['temp_c']}℃",
                                           style: TextStyle(
                                             fontSize: 35,
-                                            color: Colors.black,
+                                            color: Colors.white,
                                           ),
                                         ),
                                       ),
@@ -159,16 +174,19 @@ class _home_ScreenState extends State<home_Screen> {
                                               children: [
                                                 Text(
                                                   "Feelslike",
-                                                  style:
-                                                      TextStyle(fontSize: 14),
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      color: Colors.white),
                                                 ),
                                                 Text("℃",
                                                     style: TextStyle(
-                                                        fontSize: 20)),
+                                                        fontSize: 20,
+                                                        color: Colors.white)),
                                                 Text(
                                                     "${apimodel?.current['feelslike_c']}",
                                                     style: TextStyle(
-                                                        fontSize: 18)),
+                                                        fontSize: 18,
+                                                        color: Colors.white)),
                                               ],
                                             ),
                                             Column(
@@ -177,14 +195,19 @@ class _home_ScreenState extends State<home_Screen> {
                                               children: [
                                                 Text(
                                                   "Wind",
-                                                  style:
-                                                      TextStyle(fontSize: 14),
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      color: Colors.white),
                                                 ),
-                                                Icon(Icons.air),
+                                                Icon(
+                                                  Icons.air,
+                                                  color: Colors.white,
+                                                ),
                                                 Text(
                                                     "${apimodel?.current['wind_kph']}",
                                                     style: TextStyle(
-                                                        fontSize: 18)),
+                                                        fontSize: 18,
+                                                        color: Colors.white)),
                                               ],
                                             ),
                                             Column(
@@ -193,14 +216,19 @@ class _home_ScreenState extends State<home_Screen> {
                                               children: [
                                                 Text(
                                                   "Cloud",
-                                                  style:
-                                                      TextStyle(fontSize: 14),
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      color: Colors.white),
                                                 ),
-                                                Icon(Icons.cloud),
+                                                Icon(
+                                                  Icons.cloud,
+                                                  color: Colors.white,
+                                                ),
                                                 Text(
                                                     "${apimodel?.current['cloud']}",
                                                     style: TextStyle(
-                                                        fontSize: 18)),
+                                                        fontSize: 18,
+                                                        color: Colors.white)),
                                               ],
                                             ),
                                             Column(
@@ -209,14 +237,19 @@ class _home_ScreenState extends State<home_Screen> {
                                               children: [
                                                 Text(
                                                   "Humidity",
-                                                  style:
-                                                      TextStyle(fontSize: 14),
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      color: Colors.white),
                                                 ),
-                                                Icon(Icons.water_drop),
+                                                Icon(
+                                                  Icons.water_drop,
+                                                  color: Colors.white,
+                                                ),
                                                 Text(
                                                     "${apimodel?.current['humidity']}",
                                                     style: TextStyle(
-                                                        fontSize: 18)),
+                                                        fontSize: 18,
+                                                        color: Colors.white)),
                                               ],
                                             ),
                                           ],
@@ -243,15 +276,17 @@ class _home_ScreenState extends State<home_Screen> {
                                               children: [
                                                 Text(
                                                   "${index}:00",
-                                                  style:
-                                                      TextStyle(fontSize: 14),
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      color: Colors.white),
                                                 ),
                                                 Image.network(
                                                     "http:${apimodel?.forecast['forecastday'][0]['hour'][index]['condition']['icon']}"),
                                                 Text(
                                                     "${apimodel?.forecast['forecastday'][0]['hour'][index]['temp_c']}℃",
                                                     style: TextStyle(
-                                                        fontSize: 18)),
+                                                        fontSize: 18,
+                                                        color: Colors.white)),
                                               ],
                                             ),
                                           ),
@@ -280,8 +315,8 @@ class _home_ScreenState extends State<home_Screen> {
             : Scaffold(
                 body: Center(
                   child: Container(
-                    height: 350,
-                    width: 400,
+                    height: 450,
+                    width: 500,
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             image: AssetImage("lib/Assets/1.gif"),

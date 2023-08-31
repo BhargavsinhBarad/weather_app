@@ -1,6 +1,7 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
+import 'package:searchbar_animation/searchbar_animation.dart';
 import 'package:wather_app/Model/Utils/api.dart';
 
 import '../Model/Utils/api_model.dart';
@@ -16,6 +17,7 @@ class home_ios extends StatefulWidget {
 
 class _home_iosState extends State<home_ios> {
   String titl = "Surat";
+  static TextEditingController textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
@@ -57,23 +59,15 @@ class _home_iosState extends State<home_ios> {
                                 height:
                                     MediaQuery.of(context).size.height * 0.05,
                               ),
-                              Container(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.07,
-                                margin: EdgeInsets.all(8),
-                                decoration: BoxDecoration(
-                                    border: Border.all(),
-                                    borderRadius: BorderRadius.circular(40)),
-                                child: CupertinoTextFormFieldRow(
-                                  onFieldSubmitted: (val) {
-                                    setState(() {
-                                      titl = val;
-                                    });
-                                  },
-                                  placeholder: "Search Here..",
-                                  placeholderStyle:
-                                      TextStyle(color: CupertinoColors.black),
-                                ),
+                              CupertinoTextFormFieldRow(
+                                onFieldSubmitted: (val) {
+                                  setState(() {
+                                    titl = val;
+                                  });
+                                },
+                                placeholder: "Search Here..",
+                                placeholderStyle: TextStyle(
+                                    color: CupertinoColors.black, fontSize: 24),
                               ),
                               Container(
                                 height:
@@ -107,7 +101,8 @@ class _home_iosState extends State<home_ios> {
                                           },
                                         ),
                                         CupertinoSwitch(
-                                            thumbColor: CupertinoColors.black,
+                                            thumbColor: CupertinoColors.white,
+                                            activeColor: CupertinoColors.black,
                                             value: Provider.of<platfrom>(
                                                     context,
                                                     listen: false)
@@ -124,11 +119,6 @@ class _home_iosState extends State<home_ios> {
                                       style: TextStyle(
                                           fontSize: 50,
                                           color: CupertinoColors.black),
-                                    ),
-                                    SizedBox(
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.01,
                                     ),
                                     Image.network(
                                         "http:${apimodel?.current['condition']['icon']}"),
@@ -215,8 +205,8 @@ class _home_iosState extends State<home_ios> {
             : CupertinoPageScaffold(
                 child: Center(
                   child: Container(
-                    height: 350,
-                    width: 400,
+                    height: 450,
+                    width: 500,
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             image: AssetImage("lib/Assets/1.gif"),
