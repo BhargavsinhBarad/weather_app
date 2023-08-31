@@ -14,28 +14,14 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
-
-
-![Screenshot_2023-08-28-10-15-14-40_b9de593999771fb01501c2bc2c54faf9](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/8f128a2c-d3e0-4a11-89d7-0ff92b059bd4)
-
-
-![Screenshot_2023-08-28-10-16-29-23_b9de593999771fb01501c2bc2c54faf9](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/c1dc1765-0eb0-477a-b332-9aa587e3a0cf)
-![Screenshot_2023-08-28-10-22-59-44_b9de593999771fb01501c2bc2c54faf9](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/377b0edb-08ab-4ee3-88d3-4d6b23fdcf65)
-![Screenshot_2023-08-28-10-23-11-83_b9de593999771fb01501c2bc2c54faf9](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/c68e34d7-f2b5-47bf-87d9-ba60771f0061)
-
-![Screenshot_2023-08-28-10-23-52-22_b9de593999771fb01501c2bc2c54faf9](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/d050116a-fbe9-4569-b53a-d0b10f5cc8ef)
-![Screenshot_2023-08-28-10-23-23-22_b9de593999771fb01501c2bc2c54faf9](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/214c2ff8-088e-4f7d-8ba9-714b7443a0ed)
-
-
-![Screenshot_2023-08-28-10-23-32-37_b9de593999771fb01501c2bc2c54faf9](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/1346147d-6346-4acb-922c-553d37b570bc)
-
-
-![Screenshot_2023-08-28-10-23-52-22_b9de593999771fb01501c2bc2c54faf9](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/b1976d90-e213-4328-8d0e-c001dbdd6611)
-
-![Screenshot_2023-08-28-10-24-03-28_b9de593999771fb01501c2bc2c54faf9](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/f6943422-748a-404d-9ea1-fb9017427364)
-
-
-![Screenshot_2023-08-28-10-24-10-16_b9de593999771fb01501c2bc2c54faf9](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/479f927a-5e79-47bd-a321-051215ae6459)
-![Screenshot_2023-08-28-10-26-33-71_b9de593999771fb01501c2bc2c54faf9](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/ce671476-bab9-4057-b9dc-c5218e2b852f)
-
-
+![1](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/569b2b77-bbb7-414c-b70a-a89bf02f0173)
+![2](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/9109be70-61e0-40a0-a425-17017017063b)
+![3](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/2561d8cd-b49d-4c31-87c9-b1c1af99e2b9)
+![4](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/ee3f35d0-d554-415e-9d26-6be04c5d24bc)
+![5](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/2983f219-6e5f-4d60-b3b9-752bd5c41909)!
+[6](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/8e670c19-bf32-4cae-af7c-c31e7816fbb2)
+![7](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/e209c088-3062-4154-9a1b-3f5418f8ff3f)
+![8](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/4f58e1f9-d2da-4b28-ac51-cdb6857440ed)
+![9](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/10775e3f-23ad-4422-b477-0d4dc625f8f9)
+![10](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/084a5b7b-de9b-4232-96a7-dce3a879d421)
+![11](https://github.com/BhargavsinhBarad/wather_app/assets/118417960/06027ac7-83c3-48ba-b05a-39f04367c01b)
