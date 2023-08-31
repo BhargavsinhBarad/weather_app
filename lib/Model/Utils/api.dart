@@ -14,7 +14,7 @@ class api_helper {
       Uri.parse(
           "https://api.weatherapi.com/v1/forecast.json?key=24e065aab8fa4fa08b245306232208&q=$search&days=1&aqi=no&alerts=no"),
     );
-    if (ans.statusCode == 200) {
+    if (ans.statusCode == 20) {
       var body = ans.body;
       Map decodegata = jsonDecode(body);
       api_model data = api_model.js(data: decodegata);

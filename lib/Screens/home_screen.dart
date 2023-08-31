@@ -302,22 +302,26 @@ class _home_ScreenState extends State<home_Screen> {
                       }
                       return Center(
                         child: Container(
-                          height: double.infinity,
-                          width: double.infinity,
-                          child: Center(
-                            child: Image.network(
-                                "https://cdn.dribbble.com/users/205136/screenshots/2582152/ae-fun.gif"),
-                          ),
+                          height: 400,
+                          width: 400,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                  image: NetworkImage(
+                                      "https://cdn.dribbble.com/users/205136/screenshots/2582152/ae-fun.gif"),
+                                  fit: BoxFit.cover)),
                         ),
                       );
                     }),
               )
             : Scaffold(
+                backgroundColor: Colors.white,
                 body: Center(
                   child: Container(
                     height: 450,
                     width: 500,
                     decoration: BoxDecoration(
+                        shape: BoxShape.circle,
                         image: DecorationImage(
                             image: AssetImage("lib/Assets/1.gif"),
                             fit: BoxFit.cover)),

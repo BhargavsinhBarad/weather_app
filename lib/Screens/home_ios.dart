@@ -75,8 +75,6 @@ class _home_iosState extends State<home_ios> {
                                 width: MediaQuery.of(context).size.width,
                                 margin: EdgeInsets.all(15),
                                 decoration: BoxDecoration(
-                                    // color:
-                                    //     CupertinoColors.black.withOpacity(0.4),
                                     borderRadius: BorderRadius.circular(40)),
                                 child: Column(
                                   children: [
@@ -193,21 +191,25 @@ class _home_iosState extends State<home_ios> {
                   }
                   return Center(
                     child: Container(
-                      height: 150,
-                      width: 150,
-                      child: Center(
-                        child: Image.network(
-                            "https://cdn.dribbble.com/users/205136/screenshots/2582152/ae-fun.gif"),
-                      ),
+                      height: 400,
+                      width: 400,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              image: NetworkImage(
+                                  "https://cdn.dribbble.com/users/205136/screenshots/2582152/ae-fun.gif"),
+                              fit: BoxFit.cover)),
                     ),
                   );
                 })
             : CupertinoPageScaffold(
+                backgroundColor: CupertinoColors.white,
                 child: Center(
                   child: Container(
-                    height: 450,
-                    width: 500,
+                    height: 500,
+                    width: 400,
                     decoration: BoxDecoration(
+                        shape: BoxShape.circle,
                         image: DecorationImage(
                             image: AssetImage("lib/Assets/1.gif"),
                             fit: BoxFit.cover)),

@@ -19,12 +19,13 @@ class _SplashState extends State<Splash> {
       },
     );
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.lightBlueAccent,
       body: Center(
         child: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          decoration: const BoxDecoration(
+          height: 300,
+          width: 300,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
             image: DecorationImage(
               image: AssetImage("lib/Assets/2.gif"),
               fit: BoxFit.cover,
