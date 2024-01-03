@@ -77,7 +77,7 @@ Project Evaluation:
 <img src = "https://github.com/BhargavsinhBarad/wather_app/assets/118417960/064f2642-b257-4dbe-8121-a75d42d42710" width = "250px">
 <img src = "https://github.com/BhargavsinhBarad/wather_app/assets/118417960/6c002460-3cc9-4faa-92ed-91fdf783fdcd" width = "250px">
 <img src = "https://github.com/BhargavsinhBarad/wather_app/assets/118417960/586871df-6066-4703-a5ec-05f3326fd8d6" width = "250px">
-<img src = "https://github.com/BhargavsinhBarad/wather_app/assets/118417960/8e670c19-bf32-4cae-af7c-c31e7816fbb2" width = "250px">
+
 <img src = "https://github.com/BhargavsinhBarad/wather_app/assets/118417960/4f58e1f9-d2da-4b28-ac51-cdb6857440ed" width = "250px">
 <img src = "https://github.com/BhargavsinhBarad/wather_app/assets/118417960/10775e3f-23ad-4422-b477-0d4dc625f8f9" width = "250px">
 <img src = "https://github.com/BhargavsinhBarad/wather_app/assets/118417960/084a5b7b-de9b-4232-96a7-dce3a879d421" width = "250px">
